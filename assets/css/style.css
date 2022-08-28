@@ -1,0 +1,166 @@
+/* color scheme sourced from http://khroma.co/generator/ */
+:root {
+  --outer-space: #33393f;
+  --bright-turquoise: #2aefcb;
+  --gin: #e0eae4;
+  --heliotrope: #e866ec;
+}
+
+
+body {
+  background-color: #c5ddea;
+}
+
+
+li {
+  display: inline;
+  padding: 0px 20px;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: #FDF8F5;
+}
+
+header,
+footer {
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  background-color: #264e61;
+}
+
+header {
+  position: relative;
+  border-bottom: 0px solid #c5ddea;
+  text-align: right;
+}
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+}
+
+
+/* Top Image */
+.hero {
+  height: 500px;
+  width: 100%;
+  margin-bottom: 25px;
+  background-image: url("../images/Moonlight.jpeg");
+  background-size: cover;
+  background-position: center;
+  opacity: 50%; 
+}
+  
+  .hero:hover{
+    opacity: 100%; 
+  }
+
+/* Side Bar */
+aside {
+    margin-right: 20px;
+    padding: 20px;
+    clear: both;
+    float: left;
+    width: 20%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #2589bd;
+    text-align: justify;
+}
+
+h2 {
+  text-align: center;
+}
+
+.bio-pic {
+  border-radius: 50%;
+  border: 5px solid black;
+  width: 150px; 
+  display: block;
+  Margin-left: auto;
+  margin-right: auto;
+}
+
+
+ /* Portfolio Content */
+
+/* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* using a mobile-first approach, set base column width to be 100% and we'll update it using media queries for larger screen sizes */
+.card-column {
+  flex: 1 0 100%;
+  padding: 1.5rem;
+  /* when the screen resizes, make it so our columns don't jump in size */
+  transition: flex-basis 500ms linear;
+  margin-bottom: 1.5rem;
+}
+
+/* make each code card a flexbox column to align and justify content within it */
+.code-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
+  padding: 2rem;
+  color: var(--heliotrope);
+
+  /* outline is like border, but on the outside of the box instead of inside */
+  outline: 2px dashed var(--gin);
+  outline-offset: -2px;
+  transition: all 0.5s ease-in-out;
+}
+
+.code-card .card-header {
+  /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
+  position: relative;
+  margin: -4rem 0 1.5rem 0;
+  padding: 0.5rem 1rem;
+  background-color: var(--outer-space);
+  color: var(--heliotrope);
+  border: 2px solid var(--gin);
+  border-radius: 8px;
+  transition: all 0.5s ease-in-out;
+}
+
+
+/* Media Queries */
+
+/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+@media screen and (min-width: 768px) {
+  /* on tablets, set columns to only be 50% of the width and not grow */
+  .card-column {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* select the last child to grow to full width if it has space to grow */
+  .card-column:last-child {
+    flex-grow: 1;
+  }
+}
+
+/* media query for larger screens */
+@media screen and (min-width: 992px) {
+  header {
+    width: 75%;
+  }
+
+  .card-column {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
