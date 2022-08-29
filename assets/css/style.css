@@ -1,14 +1,17 @@
-/* color scheme sourced from http://khroma.co/generator/ */
+/* color scheme sourced from https://coolors.co/palette/012a4a-013a63-01497c-014f86-2a6f97-2c7da0-468faf-61a5c2-89c2d9-a9d6e5 */
 :root {
-  --outer-space: #33393f;
-  --bright-turquoise: #2aefcb;
-  --gin: #e0eae4;
-  --heliotrope: #e866ec;
+  --darkest-blue: #012A4A;
+  --dark-blue: #013A63;
+  --medium-blue: #2C7DA0;
+  --light-blue: #A9D6E5;
+  --stone: #E0E1DD;
 }
 
 
 body {
-  background-color: #c5ddea;
+  background-color: var(--light-blue);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5;
 
 }
 
@@ -21,37 +24,22 @@ body {
 
 #navlinks{
   text-decoration: none;
-  color:#e866ec;
+  color: var(--stone);
 }
 
-/*Contact info*/
-.Contact {
-  display: ;
-  padding: 0px 20px;
-  text-decoration: none;
-}
-
-#contactlinks{
-  text-decoration: none;
-  color:peru;
+#navlinks:hover{
+  background-color: Var(--light-blue)
 }
 
 
-a {
-  text-decoration: none;
-  color: #FDF8F5;
-}
 
-a:hover {
-  background-color:red;
-}
-
+/* Header/Footer */
 header,
 footer {
   height: 60px;
   width: 100%;
   line-height: 60px;
-  background-color: #264e61;
+  background-color: var(--darkest-blue);
 }
 
 header {
@@ -63,6 +51,7 @@ header {
 .footer {
   text-align: center;
   font-size: 14px;
+  background-color: var(--light-blue);
 }
 
 
@@ -74,48 +63,72 @@ header {
   background-image: url("../images/Moonlight.jpeg");
   background-size: cover;
   background-position: center;
-  opacity: 50%; 
+  
 }
   
-.hero:hover{
-  opacity: 100%; 
-}
 
 /* Side Bar */
 aside {
   margin-right: 20px;
   padding: 20px;
-  clear: both;
   float: left;
   width: 20%;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #2589bd;
+  background-color: var(--medium-blue);
   text-align: justify;  
+  flex: 1;
    
 }
 
-.bio {
-  margin-bottom: 20px;
-  font-size: 12px;
-}
-
-h2 {
-  text-align: center;
-}
-
-.bio-pic {
-  border-radius: 50%;
-  border: 10px solid black;
-  width: 150px; 
-  display: block;
-  Margin-left: auto;
-  Margin-right: auto;
-  Margin-bottom: 10px;
-}
+    /* About Me Section */
+    .bio {
+      margin-bottom: 20px;
+      font-size: 12px;
+    }
 
 
- /* Portfolio Content */
-.row {
+    .bio-pic {
+      border-radius: 50%;
+      border: 10px solid var(--dark-blue);
+      width: 150px; 
+      display: block;
+      Margin-left: auto;
+      Margin-right: auto;
+      Margin-bottom: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 5px;
+      color: var(--stone)
+    }
+
+    p {
+      color: var(--stone);
+    }
+
+    /*Contact Info Section*/
+    .Contact {
+      display: ;
+      padding: 0px 20px;
+      text-decoration: none;
+      color: var(--stone);
+    }
+
+    #contactlinks{
+      text-decoration: none;
+      color:var(--light-blue);
+    }
+
+    #contactlinks:hover {
+      text-decoration: none;
+      color:var(--light-blue);
+      background-color: var(--dark-blue);
+    }
+
+ /* Work Section */
+
+ .row {
   display: flex;
   flex-wrap: wrap;
 }
@@ -136,3 +149,23 @@ h2 {
 .card-body:hover {
   opacity: 100%;
 }
+
+h3 {
+  color: var(--stone);
+  background-color: var(--dark-blue);
+}
+
+@media screen and (max-width: 768px) {
+  main,
+  aside, .bio {
+    flex-direction: column;
+  }
+
+  .bio-pic {
+    max-width: 25%;
+    border: 1px solid var(--dark-blue);
+  }
+}
+
+
+
